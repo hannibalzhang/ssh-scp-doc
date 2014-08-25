@@ -1,4 +1,4 @@
-# "How Can SSH+SCP Improve My Love Life?"  
+# "How Can SSH+SCP Improve My Life Energy?"  
 _A Guide Perpetrated by The Computer Science Major's Committee;_  
 _Authored by Dan Barella_  
 
