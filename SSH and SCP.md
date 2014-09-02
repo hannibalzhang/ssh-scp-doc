@@ -36,7 +36,7 @@ At this point it's pretty much identical to working on a lab machine except *pro
 ### Example – Remote handin over SSH  
 Continuing from before, where I'm already logged into OCCS:
 
-	< dbarella@occs >ls  # On the OCCS server
+	< dbarella@occs >ls
 	cs150        cs151        cs210        cs241        cs275        Desktop      Documents    Downloads    mail         mbox         Music        OCCSWindows  Pictures     Public       Templates    Videos       workshop     www
 	< dbarella@occs >cd cs241/
 	< dbarella@occs >ls     
