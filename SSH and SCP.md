@@ -1,38 +1,39 @@
 # "How Can SSH+SCP Improve My Life Energy?"  
 _A Guide Perpetrated by The Computer Science Major's Committee;_  
-_Authored by Dan Barella_  
+_Authored by Dan Barella and Eli Rose_  
 
 Are you intrigued by the possibility of **WORKING ON YOUR OWN PERSONAL COMPUTER** and then **AUTOMAGICALLY TRANSFERRING YOUR FILES TO OCCS TO HAND THEM IN** – all from the cozy comfort of your twin extra long bed? Well we're here to help!  
 
+--- 
+
+## SSH
 `ssh` is a command that you run on the terminal which allows you to log in to your OCCS account remotely. The `s` prefix just means `secure`.
 
 - `ssh` means _secure shell_, with `sh` referencing the _terminal shell_. On OCCS we run the `bash` shell, though there are many shells like `zsh`, `csh`, `tcsh`, bla bla bla.
 
 This command essentially lets you drive around your OCCS account as if you were working on a lab machine. You can do this from *any* UNIX machine, not just your own.  
 
---- 
+This is the syntax to use `ssh`:  
 
-## SSH
-
-You'll use `ssh` to log into your OCCS account remotely. This is the syntax:  
-
-	ssh <your_username>@cs.oberlin.edu
+	ssh your_username@cs.oberlin.edu
 	
+Where `your_username` is your OCCS account username.
+
 The terminal will ask for your password. When you type it in, you won't see anything being typed on the screen – don't worry, the terminal is still receiving your text, it's just not showing it cuz it's a paranoid panda.  
 
-### Example – Logging in to OCCS
+### Example – Logging in to OCCS
 
-	: [Dan – 0: CSMC [master *]] ; ssh dbarella@cs.oberlin.edu
+	Dan-Macbook-Pro:~ Dan$ ssh dbarella@cs.oberlin.edu
 	Password: 
 	Last login: Sun Sep 15 23:55:18 2013 from 132.162.89.59
 	Sun Microsystems Inc.   SunOS 5.10      Generic January 2005
 	< dbarella@occs >
 
-Now we're logged in. Notice where the terminal prompt changes from `: [Dan – 0: CSMC [master *]] ; ` to `< dbarella@occs >`. The first prompt is the one I've configured on my laptop, the second is what's configured on the OCCS server.  
+Now we're logged in. Notice where the terminal prompt changes from `Dan-Macbook-Pro:~ Dan$` to `< dbarella@occs >`. The first prompt is the prompt on my laptop, the second is what's configured on the OCCS server.  
 
-At this point it's pretty much identical to working on a lab machine except **commands like** `komodo <filename> &` **won't work.** At this point let's not worry about editing files, just about handing them in.
+At this point it's pretty much identical to working on a lab machine except *programs which open other windows won't work*. So commands like `komodo <filename> &` won't work. At this point let's not worry about editing files, just about handing them in.
 
-### Example – Remote handin over SSH
+### Example – Remote handin over SSH  
 Continuing from before, where I'm already logged into OCCS:
 
 	< dbarella@occs >ls  # On the OCCS server
@@ -44,7 +45,7 @@ Continuing from before, where I'm already logged into OCCS:
 	<bla bla bla>
 	Handin of hw1 successful.  Thank you dbarella!
 	< dbarella@occs >logout
-	: [Dan – 1: CSMC [master *]] ; ls  # Now I'm back on my computer
+	Dan-Macbook-Pro:~ Dan$ ls
 	SSH and SCP.md
 
 Here I'm showing an assignment handin, but I could also make some directories, copy files around, etc. When I `logout`, the connection is closed, the prompt changes back to my local terminal, and everything is good again. To make sure I'm home, I run `ls` which shows only `SSH and SCP.md`, instead of all my OCCS class folders.  
