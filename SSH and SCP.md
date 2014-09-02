@@ -36,9 +36,6 @@ At this point it's pretty much identical to working on a lab machine except *pro
 ### Example – Remote handin over SSH  
 Continuing from before, where I'm already logged into OCCS:
 
-	< dbarella@occs >ls
-	cs150        cs151        cs210        cs241        cs275        Desktop      Documents    Downloads    mail         mbox         Music        OCCSWindows  Pictures     Public       Templates    Videos       workshop     www
-	< dbarella@occs >cd cs241/
 	< dbarella@occs >ls     
 	hw1
 	< dbarella@occs >handin -c 241 -a 1 hw1
@@ -57,4 +54,28 @@ Think of `ssh` as a way to move around and do stuff on OCCS, like to remotely ha
 
 ## SCP  
 
-- `scp` means _secure copy_, where `cp` references the UNIX copy utility.  
+`scp` is a command-line program which lets you transfer files between computers over the internet. BTDubs this command is completely separate from `ssh` -- _you don't need to ssh into OCCS to use scp_
+
+This is the syntax to use `scp`:  
+
+	scp file your_username@cs.oberlin.edu:
+	
+Where  
+- `file` is a file in the current directory  
+- `your_username` is your OCCS account username  
+-  The `:` is *VERY IMPORTANT!*. This tells `scp` to send the file to the server.  
+
+### Example 1 – Transferring armadillos.txt to my OCCS account  
+I want to transfer a file, `armadillos.txt` to my OCCS account. So that I can have armadillos. On my account.
+
+	Dan-Macbook-Pro:~ Dan$ ls
+	armadillos.txt
+	scp armadillos.txt dbarella@cs.oberlin.edu:
+	armadillos.txt                                100%    0     0.0KB/s   00:00
+
+We have now transferred the file to my account on the server. Let's `ssh` in to see if it's there
+
+	
+
+#TODO
+- `destination` is a directory on your OCCS account.  
