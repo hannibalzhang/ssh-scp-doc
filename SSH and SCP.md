@@ -2,14 +2,13 @@
 _A Guide Perpetrated by The Computer Science Major's Committee;_  
 _Authored by Dan Barella_  
 
-So you've heard of this mysterious and slightly tantalizing set of commands that begin with an 's'. Perhaps you're intrigued by the possibility to **WORK ON YOUR OWN PERSONAL COMPUTER** and then **AUTOMAGICALLY TRANSFER YOUR FILES TO OCCS TO HAND THEM IN** – all from the cozy comfort of your twin extra long bed? Well we're here to help!  
+Are you intrigued by the possibility of **WORKING ON YOUR OWN PERSONAL COMPUTER** and then **AUTOMAGICALLY TRANSFERRING YOUR FILES TO OCCS TO HAND THEM IN** – all from the cozy comfort of your twin extra long bed? Well we're here to help!  
 
-`ssh` and `scp` are commands that you run on the terminal. The `s` prefix just means `secure`.
+`ssh` is a command that you run on the terminal which allows you to log in to your OCCS account remotely. The `s` prefix just means `secure`.
 
 - `ssh` means _secure shell_, with `sh` referencing the _terminal shell_. On OCCS we run the `bash` shell, though there are many shells like `zsh`, `csh`, `tcsh`, bla bla bla.
-- `scp` means _secure copy_, where `cp` references the UNIX copy utility.  
 
-These commands let you transfer files to your OCCS account, and then drive around your OCCS account as if you were working on a lab machine. You can do this from *any* UNIX machine, not just your own.  
+This command essentially lets you drive around your OCCS account as if you were working on a lab machine. You can do this from *any* UNIX machine, not just your own.  
 
 --- 
 
@@ -55,4 +54,6 @@ Think of `ssh` as a way to move around and do stuff on OCCS, like to remotely ha
 
 ---  
 
-## SCP
+## SCP  
+
+- `scp` means _secure copy_, where `cp` references the UNIX copy utility.  
