@@ -47,12 +47,15 @@ Continuing from before, where I'm already logged into OCCS:
 
 Notice that I ran `handin -c 241 -a 1 hw1` instead of just `handin`. (Those letters with dashes in front of them are called _command-line arguments_. `-c` is followed by the class number, which here is 150, and `-a` is followed by the assignment number, which here is 1. The thing we're handing in, `hw1` is the last one, and is preceded by no letter. In general, command-line arguments are a way to give information to a program you're running from the shell. Here, they serve as a way to tell `handin` our class and assignment numbers all at once. We could have gotten the same thing done just by typing `handin` and then entering our class and assignment number ordinarily. This is just the "cool" way to do it, like riding your bike without handlebars.)
 
-These particular command-line arguments are specific to `handin`: another program might not have a `-c` argument, or it might have a `-c` argument that does something completely different. 
+These particular command-line arguments are specific to `handin`. Another program might not have a `-c` argument, or it might have a `-c` argument that does something completely different. 
 
-Here I'm showing an assignment handin, but I could also make some directories, copy files around, etc. When I `logout`, the connection is closed, the prompt changes back to my local terminal, and everything is good again. To make sure I'm home, I run `ls` which shows only `SSH and SCP.md`, instead of all my OCCS class folders.
+Here I'm showing an assignment handin, but I could also make some directories, copy files around, etc. When I `logout`, the connection is closed, the prompt changes back to my local terminal, and everything is good again. To make sure I'm home, I run `ls` which shows only `SSH and SCP.md` (this file! hey!), instead of all my OCCS class folders.
 
 ### Review
-Think of `ssh` as a way to move around and do stuff on OCCS, like to remotely hand in files – It's not such a great way to work on files, unless you know how to use a terminal-based text editor like `nano`, `vim`, `emacs`, etc. It's usually much easier to work on your code locally (on your computer), then transfer them to OCCS and use `ssh` to hand them in. How to do the transfer part? That's where we'll need to use...  
+Think of `ssh` as a way to move around and do stuff on OCCS, like to remotely hand in files – It's not such a great way to work on files, unless you know how to use a terminal-based text editor like `nano`, `vim`, `emacs`, etc. It's usually much easier to work on your code locally (on your computer), then transfer it to OCCS and use `ssh` to hand them in. How to do the transfer part? You've got options. If you like doing things by the command line, use `scp` (coming up next). If you don't, skip the next section and we'll talk about other options.
+
+#TODO
+- More non-command-line options. What do Windows people use?
 
 ---  
 
@@ -92,3 +95,5 @@ If you don't have exactly the same folders (`Desktop`, `Public`, etc.) don't wor
 
 ### More SCP
 - You can specify a destination in your OCCS account where you want to send the files. Just put it after the `:`. For example, `scp armadillos.txt dbarella@cs.oberlin.edu:cs150` would copy `armadillos.txt` to your account's `cs150` folder (if there is one). You can put a whole file path here too: `scp armadillos.txt dbarella@cs.oberlin.edu:cs150/lab01` will copy it to the lab01 folder inside the cs150 folder.
+- The `-r` command-line option copies entire directory. So the command `scp -r lab01 dbarella@cs.oberlin.edu:` will copy the folder named `lab01` from the current directory to your occs account. Most of the time this is easier than copying every individual file. Actually, `-r` will copy individual files too. So there's no reason not to use it.
+- `scp` can copy many files at once. Just list them all, like this: `scp file1.txt file2.txt dbarella@cs.oberlin.edu:`. 
