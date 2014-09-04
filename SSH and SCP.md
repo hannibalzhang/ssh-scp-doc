@@ -45,7 +45,10 @@ Continuing from before, where I'm already logged into OCCS:
 	Dan-Macbook-Pro:~ Dan$ ls
 	SSH and SCP.md
 
-Here I'm showing an assignment handin, but I could also make some directories, copy files around, etc. When I `logout`, the connection is closed, the prompt changes back to my local terminal, and everything is good again. To make sure I'm home, I run `ls` which shows only `SSH and SCP.md`, instead of all my OCCS class folders.  
+Here I'm showing an assignment handin, but I could also make some directories, copy files around, etc. When I `logout`, the connection is closed, the prompt changes back to my local terminal, and everything is good again. To make sure I'm home, I run `ls` which shows only `SSH and SCP.md`, instead of all my OCCS class folders.
+
+#TODO
+- is `handin` with the command-line options familiar to these guys?
 
 ### Review
 Think of `ssh` as a way to move around and do stuff on OCCS, like to remotely hand in files – It's not such a great way to work on files, unless you know how to use a terminal-based text editor like `nano`, `vim`, `emacs`, etc. It's usually much easier to work on your code locally (on your computer), then transfer them to OCCS and use `ssh` to hand them in. How to do the transfer part? That's where we'll need to use...  
@@ -75,7 +78,16 @@ I want to transfer a file, `armadillos.txt` to my OCCS account. So that I can ha
 
 We have now transferred the file to my account on the server. Let's `ssh` in to see if it's there
 
-	
+	Dan-Macbook-Pro:~ Dan$ ssh dbarella@cs.oberlin.edu
+	Password: 
+	Last login: Sun Sep 15 23:55:18 2013 from 132.162.89.59
+	Sun Microsystems Inc.   SunOS 5.10      Generic January 2005
+	< dbarella@occs > ls
+	Desktop    Downloads  OCCSWindows  Public     Videos
+	Documents  Music      Pictures     Templates  www
+	armadillos.txt
+
+If you don't have exactly the same folders (`Desktop`, `Public`, etc.) don't worry about it. All that matters is that `armadillos.txt` is there. That means our `scp` worked. Now we can run `handin` to hand our assignment in, just like we did above.
 
 #TODO
 - `destination` is a directory on your OCCS account.  
