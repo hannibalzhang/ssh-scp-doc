@@ -9,7 +9,7 @@ Are you intrigued by the possibility of **WORKING ON YOUR OWN PERSONAL COMPUTER*
 ## SSH
 `ssh` is a command that you run on the terminal which allows you to log in to your OCCS account remotely. The `s` prefix just means `secure`.
 
-- `ssh` means _secure shell_, with `sh` referencing the _terminal shell_. On OCCS we run the `bash` shell, though there are many shells like `zsh`, `csh`, `tcsh`, bla bla bla.
+- `ssh` means _secure shell_. Roughly, a _terminal_ or _console_ is the window that you type commands (like `cd` and `ls`) into, while a shell is the program running inside this window. The shell is responsible for taking your commands and doing something with them. On OCCS we run the `bash` shell, though there are many shells like `zsh`, `csh`, `tcsh`, bla bla bla.
 
 This command essentially lets you drive around your OCCS account as if you were working on a lab machine. You can do this from *any* UNIX machine, not just your own.  
 
