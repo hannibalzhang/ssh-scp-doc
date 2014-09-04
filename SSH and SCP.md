@@ -95,5 +95,5 @@ If you don't have exactly the same folders (`Desktop`, `Public`, etc.) don't wor
 
 ### More SCP
 - You can specify a destination in your OCCS account where you want to send the files. Just put it after the `:`. For example, `scp armadillos.txt dbarella@cs.oberlin.edu:cs150` would copy `armadillos.txt` to your account's `cs150` folder (if there is one). You can put a whole file path here too: `scp armadillos.txt dbarella@cs.oberlin.edu:cs150/lab01` will copy it to the lab01 folder inside the cs150 folder.
-- The `-r` command-line option copies entire directory. So the command `scp -r lab01 dbarella@cs.oberlin.edu:` will copy the folder named `lab01` from the current directory to your occs account. Most of the time this is easier than copying every individual file. Actually, `-r` will copy individual files too. So there's no reason not to use it.
+- The `-r` command-line option copies entire directory. So the command `scp -r lab01 dbarella@cs.oberlin.edu:` will copy the folder named `lab01` from the current directory to your occs account. Most of the time this is easier than copying every individual file. Actually, `-r` will copy individual files too, so it does the same thing, only better.
 - `scp` can copy many files at once. Just list them all, like this: `scp file1.txt file2.txt dbarella@cs.oberlin.edu:`. 
