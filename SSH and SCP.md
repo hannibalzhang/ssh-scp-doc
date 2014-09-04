@@ -45,7 +45,7 @@ Continuing from before, where I'm already logged into OCCS:
 	Dan-Macbook-Pro:~ Dan$ ls
 	SSH and SCP.md
 
-Notice that I ran `handin -c 241 -a 1 hw1` instead of just `handin` [^1].
+Notice that I ran `handin -c 241 -a 1 hw1` instead of just `handin`. (Those letters with dashes in front of them are called _command-line arguments_. `-c` is followed by the class number, which here is 150, and `-a` is followed by the assignment number, which here is 1. The thing we're handing in, `hw1` is the last one, and is preceded by no letter. In general, command-line arguments are a way to give information to a program you're running from the shell. Here, they serve as a way to tell `handin` our class and assignment numbers all at once. We could have gotten the same thing done just by typing `handin` and then entering our class and assignment number ordinarily. This is just the "cool" way to do it, like riding your bike without handlebars.)
 
 These particular command-line arguments are specific to `handin`: another program might not have a `-c` argument, or it might have a `-c` argument that does something completely different. 
 
@@ -90,7 +90,5 @@ We have now transferred the file to my account on the server. Let's `ssh` in to 
 
 If you don't have exactly the same folders (`Desktop`, `Public`, etc.) don't worry about it. All that matters is that `armadillos.txt` is there. That means our `scp` worked. Now we can run `handin` to hand our assignment in, just like we did above.
 
-#TODO
-- `destination` is a directory on your OCCS account.  
-
-[^1]: Those letters with dashes in front of them are called _command-line arguments_. `-c` is followed by the class number, which here is 150, and `-a` is followed by the assignment number, which here is 1. The thing we're handing in, `hw1` is the last one, and is preceded by no letter. In general, command-line arguments are a way to give information to a program you're running from the shell. Here, they serve as a way to tell `handin` our class and assignment numbers all at once. We could have gotten the same thing done just by typing `handin` and then entering our class and assignment number ordinarily. This is just the "cool" way to do it, like riding your bike without handlebars.
+### More SCP
+- You can specify a destination in your OCCS account where you want to send the files. Just put it after the `:`. For example, `scp armadillos.txt dbarella@cs.oberlin.edu:cs150` would copy `armadillos.txt` to your account's `cs150` folder (if there is one). You can put a whole file path here too: `scp armadillos.txt dbarella@cs.oberlin.edu:cs150/lab01` will copy it to the lab01 folder inside the cs150 folder.
