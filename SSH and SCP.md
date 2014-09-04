@@ -38,17 +38,18 @@ Continuing from before, where I'm already logged into OCCS:
 
 	< dbarella@occs >ls     
 	hw1
-	< dbarella@occs >handin -c 241 -a 1 hw1
+	< dbarella@occs >handin -c 150 -a 1 hw1
 	<bla bla bla>
 	Handin of hw1 successful.  Thank you dbarella!
 	< dbarella@occs >logout
 	Dan-Macbook-Pro:~ Dan$ ls
 	SSH and SCP.md
 
-Here I'm showing an assignment handin, but I could also make some directories, copy files around, etc. When I `logout`, the connection is closed, the prompt changes back to my local terminal, and everything is good again. To make sure I'm home, I run `ls` which shows only `SSH and SCP.md`, instead of all my OCCS class folders.
+Notice that I ran `handin -c 241 -a 1 hw1` instead of just `handin` [^1].
 
-#TODO
-- is `handin` with the command-line options familiar to these guys?
+These particular command-line arguments are specific to `handin`: another program might not have a `-c` argument, or it might have a `-c` argument that does something completely different. 
+
+Here I'm showing an assignment handin, but I could also make some directories, copy files around, etc. When I `logout`, the connection is closed, the prompt changes back to my local terminal, and everything is good again. To make sure I'm home, I run `ls` which shows only `SSH and SCP.md`, instead of all my OCCS class folders.
 
 ### Review
 Think of `ssh` as a way to move around and do stuff on OCCS, like to remotely hand in files – It's not such a great way to work on files, unless you know how to use a terminal-based text editor like `nano`, `vim`, `emacs`, etc. It's usually much easier to work on your code locally (on your computer), then transfer them to OCCS and use `ssh` to hand them in. How to do the transfer part? That's where we'll need to use...  
@@ -91,3 +92,5 @@ If you don't have exactly the same folders (`Desktop`, `Public`, etc.) don't wor
 
 #TODO
 - `destination` is a directory on your OCCS account.  
+
+[^1]: Those letters with dashes in front of them are called _command-line arguments_. `-c` is followed by the class number, which here is 150, and `-a` is followed by the assignment number, which here is 1. The thing we're handing in, `hw1` is the last one, and is preceded by no letter. In general, command-line arguments are a way to give information to a program you're running from the shell. Here, they serve as a way to tell `handin` our class and assignment numbers all at once. We could have gotten the same thing done just by typing `handin` and then entering our class and assignment number ordinarily. This is just the "cool" way to do it, like riding your bike without handlebars.
